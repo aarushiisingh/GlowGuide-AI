@@ -55,7 +55,7 @@ class ColorAnalyzer:
             return "Light"
 
         elif ita > 28:
-            return "Intermediate"
+            return "Neutral"
 
         elif ita > 10:
             return "Tan"
