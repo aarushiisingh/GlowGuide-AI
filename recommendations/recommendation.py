@@ -1,57 +1,12 @@
+from recommendations.recommendation_database import DATABASE
+
 def get_recommendations(tone, undertone):
 
-    database = {
+    key = (tone, undertone)
 
-        ("Fair", "Cool"): {
-            "Foundation": "Ivory",
-            "Lipstick": "Rose Pink",
-            "Blush": "Soft Pink",
-            "Eyeshadow": "Silver"
-        },
+    if key in DATABASE:
+        return DATABASE[key]
 
-        ("Fair", "Warm"): {
-            "Foundation": "Warm Ivory",
-            "Lipstick": "Coral",
-            "Blush": "Peach",
-            "Eyeshadow": "Gold"
-        },
+    print(f"Recommendation not found for {key}. Using Fair Neutral.")
 
-        ("Medium", "Warm"): {
-            "Foundation": "Golden Beige",
-            "Lipstick": "Terracotta",
-            "Blush": "Peach",
-            "Eyeshadow": "Bronze"
-        },
-
-        ("Medium", "Neutral"): {
-            "Foundation": "Natural Beige",
-            "Lipstick": "Nude Pink",
-            "Blush": "Rose",
-            "Eyeshadow": "Taupe"
-        },
-
-        ("Tan", "Warm"): {
-            "Foundation": "Honey",
-            "Lipstick": "Brick Red",
-            "Blush": "Burnt Peach",
-            "Eyeshadow": "Copper"
-        },
-
-        ("Deep", "Cool"): {
-            "Foundation": "Espresso",
-            "Lipstick": "Berry",
-            "Blush": "Plum",
-            "Eyeshadow": "Purple"
-        }
-
-    }
-
-    return database.get(
-        (tone, undertone),
-        {
-            "Foundation": "Natural",
-            "Lipstick": "Nude",
-            "Blush": "Peach",
-            "Eyeshadow": "Brown"
-        }
-    )
+    return DATABASE[("Fair", "Neutral")]
