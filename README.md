@@ -166,4 +166,8 @@ Interested in Artificial Intelligence, Computer Vision, Machine Learning and Ful
 
 ---
 
+## 📄 License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
 ⭐ If you like this project, consider giving it a star!
